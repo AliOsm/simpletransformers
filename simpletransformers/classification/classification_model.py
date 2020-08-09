@@ -820,7 +820,7 @@ class ClassificationModel:
             for pred_row in preds:
                 mode_pred, counts = mode(pred_row)
                 if len(counts) > 1 and counts[0] == counts[1]:
-                    final_preds.append(args.tie_value)
+                    final_preds.append(mode_pred[0])
                 else:
                     final_preds.append(mode_pred[0])
             preds = np.array(final_preds)
@@ -1139,7 +1139,7 @@ class ClassificationModel:
             for pred_row in preds:
                 mode_pred, counts = mode(pred_row)
                 if len(counts) > 1 and counts[0] == counts[1]:
-                    final_preds.append(args.tie_value)
+                    final_preds.append(mode_pred[0])
                 else:
                     final_preds.append(mode_pred[0])
             preds = np.array(final_preds)
